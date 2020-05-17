@@ -1,0 +1,49 @@
+pipeline
+{
+agent any
+stages
+{
+stage(Unit testing)
+{
+steps
+{
+echo "unit testing the code"
+}
+}
+stage(Build)
+{
+steps
+{
+bat "mvn clean"
+}
+}
+stage(Deploy)
+{
+steps
+{
+echo "deploying the code"
+}
+}
+stage(Test)
+{
+steps
+{
+bat "mvn Test"
+}
+}
+stage(PREUAT Testing)
+{
+steps
+{
+echo "PREUAT test the code"
+}
+}
+stage(Release)
+{
+steps
+{
+echo "Release the code into production"
+}
+}
+}
+}
